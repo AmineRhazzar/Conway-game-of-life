@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Case from "./Case";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Grid = () => {
+    const numRows = 50;
+    const numCols = 50;
+    const [grid, setGrid] = useState(() => {
+        const rows = [];
+        for (let i = 0; i < numRows; i++) {
+            rows.push(Array.from(Array(numCols), () => 0));
+        }
+        return rows;
+    });
 
-export default App;
+  const getNeighbors = (i, j) => {
+    
+  }
+  
+  useEffect(() => {
+    const nextGen = setInterval(() => {
+      var newGrid = grid.map((rows, i) =>
+        rows.map((elem, j) => {
+        })
+      );
+    }, 3000);
+    return () => { clearInterval(nextGen) };
+    }, []);
+
+    return (
+        <div className="grid">
+            {grid.map((rows, i) =>
+                rows.map((elem, j) => <Case key={`${i}-${j}`} alive={elem} />)
+            )}
+        </div>
+    );
+};
+
+export default Grid;
