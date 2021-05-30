@@ -92,7 +92,7 @@ const Grid = (props) => {
                     clearInterval(nextGen);
                     console.log("finished!");
                 }
-            }, 300);
+            }, 200);
 
             return () => {
                 clearInterval(nextGen);
