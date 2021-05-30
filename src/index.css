@@ -53,6 +53,13 @@ button{
   color: white;
 }
 
+input{
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 10rem;
+}
+
 .pattern{
   background-color: #d3d3d3;
   font-size: 1rem;
