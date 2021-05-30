@@ -98,7 +98,7 @@ const Grid = (props) => {
                 clearInterval(nextGen);
             };
         }
-    }, [grid, props.start]);
+    }, [grid, props.start, props.speed]);
 
     return (
         <div className="grid">
