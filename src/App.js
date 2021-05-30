@@ -4,6 +4,7 @@ import gridObjects from "./ClasssicInitialGrids";
 
 const App = (props) => {
     const [start, setStart] = useState(false);
+    const [speed, setSpeed] = useState(100);
     const [initialGrid, SetInitialGrid] = useState([]);
     return (
         <>
@@ -33,9 +34,12 @@ const App = (props) => {
                         }}
                     >{name}</button>;
                 })}
+                <input type="number" placeholder="speed in ms" value={speed} onChange={(e)=>{
+                    setSpeed(e.target.value);
+                }} />
             </div>
 
-            <Grid initialGrid={initialGrid} start={start} />
+            <Grid initialGrid={initialGrid} start={start} speed={speed} />
         </>
     );
 };
