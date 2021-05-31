@@ -19,25 +19,25 @@ const Intro = (props) => {
                         state, requiring no further input. One interacts with
                         the Game of Life by creating an initial configuration
                         and observing how it evolves.
-                        <br />
-                        <a
-                            className="read-more"
-                            href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
-                        >
-                            [Read More Here]
-                        </a>
                     </p>
+                    <a
+                        className="read-more"
+                        href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+                    >
+                        [Read More Here]
+                    </a>
                     <p>
-                        Start by creating an initial state yourself (by clicking on the
-                        "cells" to turn them on and off) or choosing
-                        one of the pre-built ones
+                        Start by creating an initial state yourself (by clicking
+                        on the "cells" to turn them on and off) or choosing one
+                        of the pre-built ones
                     </p>
                     <p>
                         You can also set the speed of the animation to your
-                        likings.<br/>A lower value means greater speed.
+                        likings.
+                        <br />A lower value means greater speed.
                     </p>
                     <p>Reset everything by clearing the board</p>
-                    <button>Start</button>
+                    <button className>Start</button>
                 </div>
             )}
         </>
