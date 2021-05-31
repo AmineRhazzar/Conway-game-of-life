@@ -50,7 +50,7 @@ const App = (props) => {
                             onClick={() => {
                                 setStart(false);
                                 SetInitialGrid([]);
-                                SetInitialGrid(pattern);
+                                SetInitialGrid(pattern.concat());
                             }}
                         >
                             {name}
