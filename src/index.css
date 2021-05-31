@@ -22,9 +22,17 @@ body {
 }
 
 .intro {
-    /* text-align: center; */
     color: white;
     font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+}
+.intro *:not(.intro p:first-of-type) {
+  margin-bottom: 2rem;
+}
+
+p {
+  max-width: 75ch !important;
 }
 .intro h1 {
     font-size: 2.5rem;
@@ -42,15 +50,23 @@ body {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-
-
-.intro *:not(.intro p:first-of-type) {
-    margin-bottom: 2rem;
+.start{
+  margin: 0;
+  align-self: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #243146;
+  border: 2px solid white;
+  transition: .3s all ease;
 }
 
-p {
-    max-width: 75ch !important;
+.start:hover{
+  background-color: #243146;
+  color: white;
+  border: 2px solid white;
 }
+
 
 .control-btns {
     display: flex;

@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import App from "./App";
 
 const Intro = (props) => {
+    const intro = useRef(null);
     const [hideIntro, setHideIntro] = useState(false);
+
+    
 
     return (
         <>
             {hideIntro ? (
                 <App />
             ) : (
-                <div className="intro">
+                <div className="intro" ref={intro}>
                     <h1>John Conway's Game Of Life</h1>
                     <p>
                         The Game of Life, also known simply as Life, is a
@@ -37,7 +40,9 @@ const Intro = (props) => {
                         <br />A lower value means greater speed.
                     </p>
                     <p>Reset everything by clearing the board</p>
-                    <button className>Start</button>
+                        <button className="start" onClick={() => {
+                            setHideIntro(true);
+                    }}>Start</button>
                 </div>
             )}
         </>
