@@ -120,6 +120,7 @@ input[type="checkbox"] {
     height: 16px;
     border: 2px solid white;
     border-radius: 50%;
+    margin-right: 1rem;
 }
 input[type="checkbox"]:checked ~ .check{
   background-color: rgb(55, 151, 87);

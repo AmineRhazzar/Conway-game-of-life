@@ -9,17 +9,13 @@ const App = (props) => {
     const [showBorders, setShowBorders] = useState(true);
     const showBordersSwitch = useRef(null);
 
-    useEffect(() => {
-        showBordersSwitch.current.addEventListener("change", () => {
-            setShowBorders(showBordersSwitch.current.checked);
-        })
-    }, [])
 
     return (
         <div className="app">
             <div className="control-btns">
                 <div className="check-cont" onClick={() => {
                     showBordersSwitch.current.checked = !(showBordersSwitch.current.checked)
+                    setShowBorders(showBordersSwitch.current.checked);
                 }}>
                     <input
                         type="checkbox"
