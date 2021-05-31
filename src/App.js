@@ -6,7 +6,7 @@ const App = (props) => {
     const [start, setStart] = useState(false);
     const [speed, setSpeed] = useState(40);
     const [initialGrid, SetInitialGrid] = useState([]);
-    const [showBorders, setShowBorders] = useState(true);
+    const [showBorders, setShowBorders] = useState(false);
     const showBordersSwitch = useRef(null);
 
 
@@ -20,7 +20,6 @@ const App = (props) => {
                     <input
                         type="checkbox"
                         ref={showBordersSwitch}
-                        defaultChecked
                         hidden={false}
                     />
                     <div className="check"></div>
