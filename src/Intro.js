@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
 import App from "./App";
+import About from "./About";
+import { ReactComponent as AboutIcon } from "./about.svg";
 
 const Intro = (props) => {
     const intro = useRef(null);
     const [hideIntro, setHideIntro] = useState(false);
+    const [showAbout, setShowAbout] = useState(false);
 
     const handleHideIntro = () => {
         intro.current.classList.add("fading");
@@ -14,6 +17,12 @@ const Intro = (props) => {
 
     return (
         <>
+            <AboutIcon
+                onClick={() => {
+                    setShowAbout(!showAbout);
+                }}
+            />
+            {showAbout ? <About /> : <About closed={true} />}
             {hideIntro ? (
                 <App />
             ) : (

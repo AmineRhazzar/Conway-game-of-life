@@ -21,6 +21,92 @@ body {
     align-items: center;
 }
 
+#about-icon{
+    fill: white;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3rem;
+    cursor: pointer;
+}
+
+.about{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    color: white;
+    background-color: rgb(53, 79, 110);
+    border: 1px solid #00caff;
+    animation: appear .6s ease forwards;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+
+@keyframes appear {
+    50%{
+        width: 40rem;
+        height: 1rem;
+        border-radius: 0;
+    }
+    100%{
+        width: 40rem;
+        height: 40rem;
+        border-radius: 24px;
+    }
+
+}
+
+.about-close{
+    animation: disappear .6s ease forwards;
+}
+
+@keyframes appear {
+    0%{
+        width: 40rem;
+        height: 40rem;
+        border-radius: 24px;
+    }
+    50%{
+        width: 40rem;
+        height: 1rem;
+        border-radius: 0;
+    }
+    100%{
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+
+}
+
+.content{
+    opacity: 0;
+    animation: cont-appear .3s ease forwards .6s;
+    text-align: center;
+}
+@keyframes cont-appear {
+    to{
+        opacity: 1;
+    }
+}
+.content > * {
+    margin-bottom: 2rem;
+}
+.content h1{
+    text-align: center;
+}
+li{
+    text-align: left;
+    margin-left:3rem;
+}
+
+
 .intro {
     color: white;
     font-size: 1.1rem;
