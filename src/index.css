@@ -1,89 +1,107 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  background-color: #0d1117;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #2c3c54;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    font-family: "Poppins", sans-serif;
 }
 
-#root{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.control-btns{
-  display: flex;
-  align-items: center;
+.intro {
+    /* text-align: center; */
+    color: white;
 }
-button{
-  width: 10rem;
-  height: 3rem;
-  padding: .5rem 1rem;
-  border: none;
-  margin: 1rem 2rem;
-  cursor: pointer;
+.intro h1 {
+    text-align: center;
 }
-.start-btn{
-  background-color: rgb(55, 151, 87);
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid rgb(182, 181, 181);
-  color: white;
-}
-.stop-btn{
-  background-color: rgb(175, 40, 74);
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid rgb(182, 181, 181);
-  color: white;
-}
-.clear-btn{
-  background-color: rgb(40, 103, 175);
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid white ;
-  color: white;
+.read-more{
+    text-align: left;
 }
 
-input{
-  height: 3rem;
-  padding: 1rem;
-  font-size: 1rem;
-  width: 10rem;
-  outline: none;
-  margin: 1rem 2rem;
+.intro * {
+    margin-bottom: 2rem;
 }
 
-.pattern{
-  background-color: #d3d3d3;
-  font-size: 1rem;
-  font-weight: 600;
-  color: black;
+p {
+    max-width: 75ch !important;
 }
 
-.grid{
-  height: 100%;
-  width: fit-content;
-  display: grid;
-  grid-template-columns: repeat(60, 20px);
+.control-btns {
+    display: flex;
+    align-items: center;
+}
+button {
+    width: 10rem;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    margin: 1rem 2rem;
+    cursor: pointer;
+}
+.start-btn {
+    background-color: rgb(55, 151, 87);
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid rgb(182, 181, 181);
+    color: white;
+}
+.stop-btn {
+    background-color: rgb(175, 40, 74);
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid rgb(182, 181, 181);
+    color: white;
+}
+.clear-btn {
+    background-color: rgb(40, 103, 175);
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid white;
+    color: white;
 }
 
-.case{
-  width: 20px;
-  height:20px;
-  border: 1px solid #999;
+input {
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 10rem;
+    outline: none;
+    margin: 1rem 2rem;
 }
 
+.pattern {
+    background-color: #d3d3d3;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+}
 
-.on{
-  background-color: white;
+.grid {
+    height: 100%;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(60, 20px);
+}
+
+.case {
+    width: 20px;
+    height: 20px;
+}
+
+.on {
+    background-color: white;
 }
