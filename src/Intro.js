@@ -6,11 +6,11 @@ const Intro = (props) => {
     const [hideIntro, setHideIntro] = useState(false);
 
     const handleHideIntro = () => {
-        intro.current.classList.add('fading');
+        intro.current.classList.add("fading");
         setTimeout(() => {
             setHideIntro(true);
         }, 150);
-    }
+    };
 
     return (
         <>
@@ -20,13 +20,12 @@ const Intro = (props) => {
                 <div className="intro" ref={intro}>
                     <h1>John Conway's Game Of Life</h1>
                     <p>
-                        The Game of Life, also known simply as Life, is a
-                        cellular automaton devised by the British mathematician
-                        John Horton Conway in 1970. It is a zero-player game,
-                        meaning that its evolution is determined by its initial
-                        state, requiring no further input. One interacts with
-                        the Game of Life by creating an initial configuration
-                        and observing how it evolves.
+                        The Game of Life is a cellular automaton devised by the
+                        British mathematician John Horton Conway in 1970. It is
+                        a zero-player game, meaning that its evolution is
+                        determined by its initial state, requiring no further
+                        input. One interacts with the Game of Life by creating
+                        an initial configuration and observing how it evolves.
                     </p>
                     <a
                         className="read-more"
@@ -45,7 +44,9 @@ const Intro = (props) => {
                         <br />A lower value means greater speed.
                     </p>
                     <p>Reset everything by clearing the board</p>
-                        <button className="start" onClick={handleHideIntro}>Start</button>
+                    <button className="start" onClick={handleHideIntro}>
+                        Start
+                    </button>
                 </div>
             )}
         </>
