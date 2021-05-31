@@ -1,19 +1,19 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
+import { ReactComponent as GithubIcon } from "./github.svg";
 
 const About = (props) => {
-    
     useEffect(() => {
         const clickOutsideHandler = (e) => {
             if (!document.querySelector(".about").contains(e.target)) {
                 props.closeMe();
             }
-        }
+        };
         document.addEventListener("click", clickOutsideHandler);
 
         return () => {
             document.removeEventListener("click", clickOutsideHandler);
-        }
-    }, [props])
+        };
+    }, [props]);
 
     return (
         <div className="about">
@@ -34,6 +34,9 @@ const About = (props) => {
                         Similarly, all other dead cells stay dead.
                     </li>
                 </ul>
+                <a href="https://github.com/AmineRhazzar/conway-game-of-life">
+                    <GithubIcon />
+                </a>
             </div>
         </div>
     );

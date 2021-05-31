@@ -32,6 +32,14 @@ body {
     cursor: pointer;
 }
 
+#github-icon{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    fill: white;
+    margin-top: 2rem;
+}
+
 .about{
     position: absolute;
     top: 50%;
