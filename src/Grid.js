@@ -110,6 +110,7 @@ const Grid = (props) => {
                         indexCol={j}
                         alive={elem}
                         setCell={setCell}
+                        showBorders={props.showBorders}
                     />
                 ))
             )}

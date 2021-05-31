@@ -5,7 +5,12 @@ const Intro = (props) => {
     const intro = useRef(null);
     const [hideIntro, setHideIntro] = useState(false);
 
-    
+    const handleHideIntro = () => {
+        intro.current.classList.add('fading');
+        setTimeout(() => {
+            setHideIntro(true);
+        }, 150);
+    }
 
     return (
         <>
@@ -40,9 +45,7 @@ const Intro = (props) => {
                         <br />A lower value means greater speed.
                     </p>
                     <p>Reset everything by clearing the board</p>
-                        <button className="start" onClick={() => {
-                            setHideIntro(true);
-                    }}>Start</button>
+                        <button className="start" onClick={handleHideIntro}>Start</button>
                 </div>
             )}
         </>

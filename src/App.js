@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Grid from "./Grid";
 import gridObjects from "./ClasssicInitialGrids";
 
@@ -6,11 +6,32 @@ const App = (props) => {
     const [start, setStart] = useState(false);
     const [speed, setSpeed] = useState(40);
     const [initialGrid, SetInitialGrid] = useState([]);
+    const [showBorders, setShowBorders] = useState(true);
+    const showBordersSwitch = useRef(null);
+
+    useEffect(() => {
+        showBordersSwitch.current.addEventListener("change", () => {
+            setShowBorders(showBordersSwitch.current.checked);
+        })
+    }, [])
+
     return (
-        <>
+        <div className="app">
             <div className="control-btns">
+                <div className="check-cont" onClick={() => {
+                    showBordersSwitch.current.checked = !(showBordersSwitch.current.checked)
+                }}>
+                    <input
+                        type="checkbox"
+                        ref={showBordersSwitch}
+                        defaultChecked
+                        hidden={false}
+                    />
+                    <div className="check"></div>
+                    <p>Show cell borders</p>
+                </div>
                 <button
-                    className={`${start? "stop-btn":"start-btn"}`}
+                    className={`${start ? "stop-btn" : "start-btn"}`}
                     onClick={() => {
                         setStart(!start);
                     }}
@@ -27,22 +48,32 @@ const App = (props) => {
                     Clear
                 </button>
                 {Object.entries(gridObjects).map(([name, pattern]) => {
-                    return <button key={name}
-                        className="pattern"
-                        onClick={() => {
-                            setStart(false);
-                            SetInitialGrid([]);
-                            SetInitialGrid(pattern);
-                        }}
-                    >{name}</button>;
+                    return (
+                        <button
+                            key={name}
+                            className="pattern"
+                            onClick={() => {
+                                setStart(false);
+                                SetInitialGrid([]);
+                                SetInitialGrid(pattern);
+                            }}
+                        >
+                            {name}
+                        </button>
+                    );
                 })}
-                <input type="number" placeholder="speed in ms" value={speed} onChange={(e)=>{
-                    setSpeed(e.target.value);
-                }} />
+                <input
+                    type="number"
+                    placeholder="speed in ms"
+                    value={speed}
+                    onChange={(e) => {
+                        setSpeed(e.target.value);
+                    }}
+                />
             </div>
 
-            <Grid initialGrid={initialGrid} start={start} speed={speed} />
-        </>
+            <Grid initialGrid={initialGrid} start={start} speed={speed} showBorders={ showBorders}/>
+        </div>
     );
 };
 export default App;

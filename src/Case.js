@@ -6,7 +6,7 @@ const Case = (props) => {
     };
     return (
         <div
-            className={`case ${props.alive ? "on" : ""}`}
+            className={`case ${props.alive ? "on" : ""} ${props.showBorders? "border":""}`}
             onClick={setCellState}
         ></div>
     );
