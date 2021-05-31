@@ -39,10 +39,12 @@ body {
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
+    opacity: 1;
     color: white;
     background-color: rgb(53, 79, 110);
     border: 1px solid #00caff;
     animation: appear .6s ease forwards;
+    transition: .3s all ease;
     display: grid;
     place-items: center;
     padding: 2rem;
@@ -62,28 +64,6 @@ body {
 
 }
 
-.about-close{
-    animation: disappear .6s ease forwards;
-}
-
-@keyframes appear {
-    0%{
-        width: 40rem;
-        height: 40rem;
-        border-radius: 24px;
-    }
-    50%{
-        width: 40rem;
-        height: 1rem;
-        border-radius: 0;
-    }
-    100%{
-        width: 0;
-        height: 0;
-        visibility: hidden;
-    }
-
-}
 
 .content{
     opacity: 0;
@@ -95,6 +75,7 @@ body {
         opacity: 1;
     }
 }
+
 .content > * {
     margin-bottom: 2rem;
 }

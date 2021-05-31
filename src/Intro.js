@@ -15,14 +15,22 @@ const Intro = (props) => {
         }, 150);
     };
 
+    const handleHideAbout = () => {
+        if (showAbout) {
+            document.querySelector(".about").style.opacity = "0";
+            setTimeout(() => {
+                setShowAbout(false);
+            }, 300);
+        } else {
+            setShowAbout(true);
+        }
+        
+    };
+
     return (
         <>
-            <AboutIcon
-                onClick={() => {
-                    setShowAbout(!showAbout);
-                }}
-            />
-            {showAbout ? <About /> : <About closed={true} />}
+            <AboutIcon onClick={handleHideAbout} />
+            {showAbout ? <About closeMe={handleHideAbout}/> : <></>}
             {hideIntro ? (
                 <App />
             ) : (
