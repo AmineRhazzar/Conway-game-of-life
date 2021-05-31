@@ -30,6 +30,8 @@ const App = (props) => {
                     return <button key={name}
                         className="pattern"
                         onClick={() => {
+                            setStart(false);
+                            SetInitialGrid([]);
                             SetInitialGrid(pattern);
                         }}
                     >{name}</button>;
