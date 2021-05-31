@@ -4,7 +4,7 @@ import gridObjects from "./ClasssicInitialGrids";
 
 const App = (props) => {
     const [start, setStart] = useState(false);
-    const [speed, setSpeed] = useState(80);
+    const [speed, setSpeed] = useState(40);
     const [initialGrid, SetInitialGrid] = useState([]);
     return (
         <>
